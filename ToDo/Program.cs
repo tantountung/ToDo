@@ -3,14 +3,22 @@
 
 namespace ToDo
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            int personID = ToDo.Model.Person(int personID);
-            //Console.WriteLine("Your person number is: {0}", Convert.ToInt32(ToDo.Model.Person);
-            Console.WriteLine("Your person number is:" + personID);
-            
+            //Console.WriteLine("Please choose, 1 for new entry and 2 for checking registry, or 3 to end the program");
+            //int userChoice = Convert.ToInt32(Console.ReadLine());
+
+            //switch (userChoice)
+            //{
+            //    case 1:
+            //        Model.Person();
+            //        Model.Todo();
+            //        break;
+
+
+            //}
 
         }
     }
