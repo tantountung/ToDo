@@ -27,6 +27,7 @@ namespace ToDo.Model
         {
             this.todoId = todoId;
             this.description = description;
+            
         }
 
         public int TodoId
@@ -40,12 +41,13 @@ namespace ToDo.Model
             set { description = value; }
 
         }
-        //public bool DoneStatus
-           
-        //{
-        //    get { return doneStatus; }
-        //    set { doneStatus = value; }
-        //}
+        public bool DoneStatus
+
+        {
+
+            get { return doneStatus; }
+            set { doneStatus = value; }
+        }
 
         ///*
         // *private bool done;

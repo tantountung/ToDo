@@ -133,25 +133,29 @@ namespace ToDo.Data
         //First: you need to find the correct array index of the object.
         //Second: You need to rebuild array by excluding the object on found index.
 
-        public Todo RemoveObject()
+        public Todo[] RemoveObject()
         {
-            
-            
-            Todo todo1item = new Todo(TodoSequencer.NextTodoId(), description);
-            Array.Resize<Todo>(ref todoitems, todoitems.Length + 1);
-            todoitems[todoitems.Length - 1] = todo1item;
-            return todo1item;
+            int indexRemove = Array.IndexOf(todoitems, FindUnassignedTodoItems());
+
+            for (int a = indexRemove; a < todoitems.Length - 1; a++)//-1, because gone 1 array content
+            {
+                // moving elements downwards, to fill the gap at [index]
+                todoitems[a] = todoitems[a + 1];
+            }
+            // finally, let's decrement Array's size by one
+            Array.Resize<Todo>(ref todoitems, todoitems.Length - 1);
+            return todoitems;
+
+
+            //Todo todo1item = new Todo(TodoSequencer.NextTodoId(), description);
+            //Array.Resize<Todo>(ref todoitems, todoitems.Length + 1);
+            //todoitems[todoitems.Length - 1] = todo1item;
+            //return todo1item;
 
 
             //int indexRemove = Array.IndexOf(Todo, value);
 
-            //for (int a = indexRemove; a < Todo.Length - 1; a++)
-            //{
-            //    // moving elements downwards, to fill the gap at [index]
-            //    Todo[a] = Todo[a + 1];
-            //}
-            //// finally, let's decrement Array's size by one
-            //return Array.Resize(ref Todo, Todo.Length - 1);
+           
 
 
 

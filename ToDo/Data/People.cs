@@ -71,6 +71,20 @@ namespace ToDo.Data
             Array.Clear(people, 0, people.Length);
         }
 
+        public Person[] RemoveObject()
+        {
+            int indexRemove = Array.IndexOf(people, FindById(personId));
+
+            for (int i = indexRemove; i < people.Length -1; i++)
+            {
+                people[i] = people[i + 1];
+            }
+
+            Array.Resize<Person>(ref people, people.Length - 1);
+            return people;
+
+
+        }
 
     }
 }
