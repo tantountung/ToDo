@@ -14,12 +14,14 @@ namespace ToDo.Model
     c.Unit test Todo class.
     d.Commit changes.*/
 
-    public class Todo
+    public class Todo 
     {
         private readonly int todoId;
         private string description;
-        private bool done;
-        private Person assignee;
+        internal bool doneStatus;//changed from private to internal since inaccessible from other class
+        //private bool doneStatus;
+        internal Person assignee;//changed from private to internal since inaccessible from other class
+        //private Person assignee;
 
         public Todo(int todoId, string description)
         {
@@ -37,7 +39,22 @@ namespace ToDo.Model
             get { return description; }
             set { description = value; }
 
-
         }
+        //public bool DoneStatus
+           
+        //{
+        //    get { return doneStatus; }
+        //    set { doneStatus = value; }
+        //}
+
+        ///*
+        // *private bool done;
+        //private Person assignee;
+        // * */
+        //public bool DoneStatus()
+        //{
+        //    bool doneStatus = done;
+        //    return doneStatus;
+        //}
     }
 }

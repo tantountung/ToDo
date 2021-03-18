@@ -18,7 +18,7 @@ e. Commit changes.
    
 
         private static int personId;
-        public static int NextPersonId(int personId)
+        public static int NextPersonId()
         {
             
             personId = personId + 1;
@@ -27,7 +27,7 @@ e. Commit changes.
         }
 
         //c.Add a static method called reset() that sets the personId variable to 0.
-        public static int Reset(int personId)
+        public static int Reset()
         {
             personId = 0;
             return personId;
